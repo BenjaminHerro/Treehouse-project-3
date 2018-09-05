@@ -39,6 +39,7 @@ a {
 form {
 	padding: .875em 1.875em 1.875em;
 	background: #85b5ca;
+	box-shadow: 0 2.3px 5px 0 black;
 }
 
 fieldset,
@@ -88,6 +89,7 @@ input {
 	background: #c1deeb;
 	border: 2px solid #c1deeb;
 	outline: none;
+	box-shadow: 0 2px 4px 0 grey;
 }
 
 input:focus {
@@ -133,6 +135,37 @@ button:hover {
 
 .credit-card {
 	margin-top: 1.25em;
+}
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+.blue {
+	background-color: #5D90C0;
+	color: white;
+	/*box-shadow: 0.5px 1px 0 0 grey;*/
+}
+
+.styled-select {
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+/*.shirt {
+	background-color: lightgrey;
+}
+
+.legend {
+	padding-top: 25px;
+	padding-left: 10px;
+}*/
+
+.total-div {
+	font-style: italic;
 }
 
 /* ================================= 
