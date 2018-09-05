@@ -5,13 +5,17 @@ var shirtDesign = document.querySelector('select#design');
 var shirtColours = document.querySelectorAll('select#color option');
 var coloursDiv = document.querySelector('#colors-js-puns');
 var activitiesCheckboxes = document.querySelectorAll('#activity-checkbox');
+
 var fieldsetShirt = document.querySelector('.shirt');
 var fieldsetActivites = document.querySelector('.activities');
 var fieldsetPayment = document.querySelector('.payment');
+
 var nameInput = document.querySelector('#name');
 var emailInput = document.querySelector('#mail');
 var totalDiv = document.createElement('div')
 var creditCardDiv = document.querySelector('#credit-card');
+var payPalDiv = document.querySelector('#paypal');
+var bitCoinDiv = document.querySelector('#bitcoin');
 var paymentOption = document.querySelector('select#payment');
 var runningTotal = 0;
 
@@ -78,20 +82,18 @@ $(jobTitle).on('change', () => {
 //The subsequent for loop then finds the first element in the currently displayed array of options,
 //ensures that it is visible and then selects the current default option as the first visible option
 //in the select bar. 
-coloursDiv.style.visibility  = 'hidden';
+$(coloursDiv).hide();
 $(shirtDesign).on('change', () => {
 	let check = '';
-	if (shirtDesign.value === 'Select Theme'){coloursDiv.style.visibility  = 'hidden'; return;} 
-	// if (shirtDesign.value === 'Select Theme'){$(coloursDiv).animate({width:'hide'},350); return;} 
-	// $(coloursDiv).animate({width:'show'},350);
-	coloursDiv.style.visibility  = 'visible';
+	if (shirtDesign.value === 'Select Theme'){$(coloursDiv).slideUp(500); return;} 
+	$(coloursDiv).slideDown(500);
 	shirtDesign.value === "heart js" ? check = 'JS Puns' : check = "I ♥ JS"; 
 	for (i=0;i<shirtColours.length;i++){
 		shirtColours[i].innerHTML.includes(check) ? $(shirtColours[i]).hide() : $(shirtColours[i]).show()
 	};
 	for (i=0;i<shirtColours.length;i++) {
 		if (shirtColours[i].style.display === 'none') {continue;} 
-			else { shirtColours[i].selected = true; break;};
+			else {shirtColours[i].selected = true; break;};
 	};
 });
 
@@ -112,3 +114,12 @@ for(i=0;i<activitiesCheckboxes.length;i++){
      });
 }
 
+$(creditCardDiv).show()
+$(payPalDiv).hide()
+$(bitCoinDiv).hide()
+paymentOption.
+
+$(paymentOption).on('change', () => {
+	if (paymentOption.value === )
+	$(paymentOption).val() != 'credit card' ? $(creditCardDiv).slideUp(500) : $(creditCardDiv).slideDown(500);
+});
