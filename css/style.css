@@ -80,6 +80,7 @@ label {
 input,
 select {
 	margin-bottom: 1.125em;	
+	box-shadow: 0 1px 0.5px 0 grey;
 }
 
 input {
@@ -115,6 +116,10 @@ button:hover {
 	background: #184c62;
 }
 
+select option:disabled {
+	color: #fffdfd;
+}
+
 /* ================================= 
   Page Styles
 ==================================== */
@@ -140,13 +145,12 @@ button:hover {
 .semi-square {
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
-   border-radius: 5px;
+   border-radius: 7.5px;
 }
 
 .blue {
 	background-color: #5D90C0;
 	color: white;
-	/*box-shadow: 0.5px 1px 0 0 grey;*/
 }
 
 .styled-select {

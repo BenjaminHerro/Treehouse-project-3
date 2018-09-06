@@ -52,19 +52,6 @@ totalDiv.className = 'total-div';
 
 // Set the default focus on Name input element
 getFocus.focus();
-// if (! nameInput.value && ! emailInput.value) {
-// 	$(fieldsetShirt).animate({width:'hide'},350);
-// 	$(fieldsetActivites).animate({width:'hide'},350);
-// 	$(fieldsetPayment).animate({width:'hide'},350);
-// 	 };
-// $(nameInput).on('change', () => {
-// 	$(emailInput).on('change', () => {
-// 		$(fieldsetShirt).animate({width:'show'},350);
-// 		$(fieldsetActivites).animate({width:'show'},350);
-// 		$(fieldsetPayment).animate({width:'show'},350);
-// 	 	})
-// });
-
 
 //Hide the job input element for all options except 'other'. When 'other' option is selected,
 //the job input element appears (and disappears when any other option is reselected)
@@ -114,12 +101,16 @@ for(i=0;i<activitiesCheckboxes.length;i++){
      });
 }
 
-$(creditCardDiv).show()
-$(payPalDiv).hide()
-$(bitCoinDiv).hide()
-paymentOption.
+//
+$(creditCardDiv).slideDown(500);$(bitCoinDiv).slideUp(500);$(payPalDiv).slideUp(500);
 
 $(paymentOption).on('change', () => {
-	if (paymentOption.value === )
-	$(paymentOption).val() != 'credit card' ? $(creditCardDiv).slideUp(500) : $(creditCardDiv).slideDown(500);
+	if (paymentOption.value === 'credit card') {
+		$(creditCardDiv).slideDown(500);$(bitCoinDiv).slideUp(500);$(payPalDiv).slideUp(500);
+	}
+	else if (paymentOption.value === 'paypal'){
+		$(creditCardDiv).slideUp(500);$(payPalDiv).slideDown(500);$(bitCoinDiv).slideUp(500);
+	} else {
+		$(payPalDiv).slideUp(500);$(creditCardDiv).slideUp(500);$(bitCoinDiv).slideDown(500);
+	}
 });
