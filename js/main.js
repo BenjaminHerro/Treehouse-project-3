@@ -13,10 +13,14 @@ var fieldsetPayment = document.querySelector('.payment');
 var nameInput = document.querySelector('#name');
 var emailInput = document.querySelector('#mail');
 var totalDiv = document.createElement('div')
+var creditCardInput = document.querySelector('#cc-num');
+var zipCodeInput = document.querySelector('#zip');
+var cvvInput = document.querySelector('#cvv');
 var creditCardDiv = document.querySelector('#credit-card');
 var payPalDiv = document.querySelector('#paypal');
 var bitCoinDiv = document.querySelector('#bitcoin');
 var paymentOption = document.querySelector('select#payment');
+var registerButton = document.querySelector('#register-button');
 var runningTotal = 0;
 
 //This function detects whether there is a time clash, with the selected box as the variable
@@ -45,6 +49,73 @@ const handleTotal = (running) => {
 		$(totalDiv).slideDown(500);
 	}
 };
+
+const validateOtherInputs = () => {
+	let shirtTitle = document.querySelector('fieldset.shirt legend');
+	let activitiesTitle = document.querySelector('.activities legend');
+	if (!nameInput.checkValidity()) {
+		nameInput.previousElementSibling.style.color = 'red';
+		nameInput.previousElementSibling.textContent = 'Name: (Please enter your name)';
+	} else {
+		nameInput.previousElementSibling.style.color = '#152c85';
+		nameInput.previousElementSibling.textContent = 'Name:';
+	}
+	if (!emailInput.checkValidity()) {
+		emailInput.previousElementSibling.style.color = 'red';
+		emailInput.previousElementSibling.textContent = 'Email: (Please enter a valid email address)';
+	} else {
+		emailInput.previousElementSibling.style.color = '#152c85';
+		emailInput.previousElementSibling.textContent = 'Email:';
+	}
+	if (coloursDiv.style.display === 'none'){
+		shirtTitle.style.color = 'red';
+		shirtTitle.textContent = 'T-Shirt Info: (Pick a shirt yo!)';
+	} else {
+		shirtTitle.style.color = '#326cff';
+		shirtTitle.textContent = 'T-Shirt Info:';
+	}
+	if (!validateCheckboxes()) {
+		activitiesTitle.style.color = 'red';
+		activitiesTitle.textContent = "Register for Activities: (Don't forget to pick an activity!)"
+	} else {
+		activitiesTitle.style.color = '#326cff';
+		activitiesTitle.textContent = "Register for Activities:"
+	}
+	if (!creditCardInput.checkValidity()) {creditCardInput.previousElementSibling.style.color = 'red';}
+	if (!zipCodeInput.checkValidity()) {zipCodeInput.previousElementSibling.style.color = 'red';}
+	if (!cvvInput.checkValidity()) {cvvInput.previousElementSibling.style.color = 'red';}
+};
+
+const validateCheckboxes = () => {
+	let checkedBox = 0;
+	activitiesCheckboxes.forEach(box => {
+		if (box.checked) {
+			checkedBox += 1;
+		}
+	})
+	if (checkedBox < 1){
+		return false;
+	} else {
+		return true;
+	}	
+};
+
+const setRequiredTrue = () => {
+	creditCardInput.required = true;
+	zipCodeInput.required = true;
+	cvvInput.required = true;
+};
+
+const setRequiredFalse = () => {
+	creditCardInput.required = false;
+	creditCardInput.value = "";
+	zipCodeInput.required = false;
+	zipCodeInput.value = "";
+	cvvInput.required = false;
+	cvvInput.value = "";
+};
+
+
 
 //Initially appends the created totalDiv to the checkbox fieldset, setting the class for the css.
 fieldsetActivites.append(totalDiv);
@@ -107,10 +178,18 @@ $(creditCardDiv).slideDown(500);$(bitCoinDiv).slideUp(500);$(payPalDiv).slideUp(
 $(paymentOption).on('change', () => {
 	if (paymentOption.value === 'credit card') {
 		$(creditCardDiv).slideDown(500);$(bitCoinDiv).slideUp(500);$(payPalDiv).slideUp(500);
+		setRequiredTrue();
 	}
 	else if (paymentOption.value === 'paypal'){
 		$(creditCardDiv).slideUp(500);$(payPalDiv).slideDown(500);$(bitCoinDiv).slideUp(500);
+		setRequiredFalse();
 	} else {
 		$(payPalDiv).slideUp(500);$(creditCardDiv).slideUp(500);$(bitCoinDiv).slideDown(500);
+		setRequiredFalse();
 	}
+});
+
+$(registerButton).on('click',() => {
+	validateOtherInputs();
+	if (!validateCheckboxes()) {alert('You must choose at least one activity.');validateCheckboxes();}
 });

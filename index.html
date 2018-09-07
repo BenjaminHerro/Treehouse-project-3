@@ -22,10 +22,10 @@
         <legend>Basic Info</legend>
         
         <label for="name">Name:</label>
-        <input type="text" id="name" name="user_name" required>
+        <input type="text" id="name" name="user_name" required title="Please enter your name.">
         
         <label for="mail">Email:</label>
-        <input type="email" id="mail" name="user_email" required>
+        <input type="email" id="mail" name="user_email" required title="Please enter a valid email address.">
         
         <label for="title">Job Role</label>
         <select id="title" name="user_title" class='styled-select blue semi-square'>
@@ -100,17 +100,18 @@
 
           <div class="col-6 col">
             <label for="cc-num">Card Number:</label>
-        	  <input id="cc-num" name="user_cc-num" type="text">
+        	  <input id="cc-num" name="user_cc-num" type="text" pattern="[0-9]{13}|[0-9]{14}|[0-9]{15}|[0-9]{16}"
+            title="Please enter a valid Card number" required>
           </div>
 
           <div class="col-3 col">
             <label for="zip">Zip Code:</label>
-            <input id="zip" name="user_zip" type="text"> 
+            <input id="zip" name="user_zip" type="text" pattern="[0-9]{5}" title="Please enter a valid Zip Code" required> 
           </div>
 
           <div class="col-3 col">
             <label for="cvv">CVV:</label>
-            <input id="cvv" name="user_cvv" type="text"> 
+            <input id="cvv" name="user_cvv" type="text" pattern="[0-9]{3}" title="Please enter a valid CVV Code" required> 
           </div>
 
           <label for="exp-month">Expiration Date:</label>
@@ -148,7 +149,7 @@
 
       </fieldset>        
         
-      <button type="submit">Register</button>
+      <button type="submit" id="register-button">Register</button>
       
     </form>
 

@@ -14,8 +14,8 @@ button {
 
 body {
   font: 1em/1.5;
-  color: #184f68;
-	background: #accbd9;
+  color: #326cff;
+	background: #b06058;
 }
 
 header {
@@ -38,7 +38,7 @@ a {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #85b5ca;
+	background: #eb5747;
 	box-shadow: 0 2.3px 5px 0 black;
 }
 
@@ -61,7 +61,7 @@ button {
 legend {
 	font-weight: 500;
 	padding-top: .5em;
-	border-top: 2px solid #679cb3;
+	border-top: 2px solid #326cff;
 	margin-bottom: 1.125em;
 }
 
@@ -72,7 +72,7 @@ legend {
 }
 
 label {
-	color: #000;
+	color: #152c85;
 	display: block;
 	margin-bottom: .5em;
 }
@@ -87,7 +87,7 @@ input {
 	font-size: 1em;
 	font-weight: 500;
 	padding: .8em;
-	background: #c1deeb;
+	background: #91f6ff;
 	border: 2px solid #c1deeb;
 	outline: none;
 	box-shadow: 0 2px 4px 0 grey;
@@ -149,7 +149,7 @@ select option:disabled {
 }
 
 .blue {
-	background-color: #5D90C0;
+	background-color: #326cff;
 	color: white;
 }
 
