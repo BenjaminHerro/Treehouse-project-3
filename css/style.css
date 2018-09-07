@@ -14,8 +14,8 @@ button {
 
 body {
   font: 1em/1.5;
-  color: #326cff;
-	background: #b06058;
+  color: #11705a;
+	background: #77c28b;
 }
 
 header {
@@ -38,7 +38,7 @@ a {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #eb5747;
+	background: #5de080;
 	box-shadow: 0 2.3px 5px 0 black;
 }
 
@@ -61,7 +61,7 @@ button {
 legend {
 	font-weight: 500;
 	padding-top: .5em;
-	border-top: 2px solid #326cff;
+	border-top: 2px solid #11705a;
 	margin-bottom: 1.125em;
 }
 
@@ -72,7 +72,7 @@ legend {
 }
 
 label {
-	color: #152c85;
+	color: #0b6141;
 	display: block;
 	margin-bottom: .5em;
 }
@@ -87,7 +87,7 @@ input {
 	font-size: 1em;
 	font-weight: 500;
 	padding: .8em;
-	background: #91f6ff;
+	background: #c4ffd3;
 	border: 2px solid #c1deeb;
 	outline: none;
 	box-shadow: 0 2px 4px 0 grey;
@@ -107,9 +107,11 @@ input[type="radio"] {
 button {
 	color: #fff;
 	padding: .55em 1.25em;
-	background: #22627e;
+	background: #268282;
 	margin: 1.25em 0 .5em;
 	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 grey;
 }
 
 button:hover {
@@ -149,7 +151,7 @@ select option:disabled {
 }
 
 .blue {
-	background-color: #326cff;
+	background-color: #77c28b;
 	color: white;
 }
 

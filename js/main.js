@@ -57,28 +57,28 @@ const validateOtherInputs = () => {
 		nameInput.previousElementSibling.style.color = 'red';
 		nameInput.previousElementSibling.textContent = 'Name: (Please enter your name)';
 	} else {
-		nameInput.previousElementSibling.style.color = '#152c85';
+		nameInput.previousElementSibling.style.color = '#0b6141';
 		nameInput.previousElementSibling.textContent = 'Name:';
 	}
 	if (!emailInput.checkValidity()) {
 		emailInput.previousElementSibling.style.color = 'red';
 		emailInput.previousElementSibling.textContent = 'Email: (Please enter a valid email address)';
 	} else {
-		emailInput.previousElementSibling.style.color = '#152c85';
+		emailInput.previousElementSibling.style.color = '#0b6141';
 		emailInput.previousElementSibling.textContent = 'Email:';
 	}
 	if (coloursDiv.style.display === 'none'){
 		shirtTitle.style.color = 'red';
 		shirtTitle.textContent = 'T-Shirt Info: (Pick a shirt yo!)';
 	} else {
-		shirtTitle.style.color = '#326cff';
+		shirtTitle.style.color = '#0b6141';
 		shirtTitle.textContent = 'T-Shirt Info:';
 	}
 	if (!validateCheckboxes()) {
 		activitiesTitle.style.color = 'red';
 		activitiesTitle.textContent = "Register for Activities: (Don't forget to pick an activity!)"
 	} else {
-		activitiesTitle.style.color = '#326cff';
+		activitiesTitle.style.color = '#0b6141';
 		activitiesTitle.textContent = "Register for Activities:"
 	}
 	if (!creditCardInput.checkValidity()) {creditCardInput.previousElementSibling.style.color = 'red';}
