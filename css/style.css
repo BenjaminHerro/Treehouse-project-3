@@ -15,11 +15,13 @@ button {
 body {
   font: 1em/1.5;
   color: #11705a;
-	background: #77c28b;
+	background-size: cover;
+	background: linear-gradient(#7dfab6,transparent, #c4ffd3 45%),
+				#58e8a0 url('../img/background-conference-4.png') no-repeat top fixed;
 }
 
 header {
-	text-align: center;  
+	text-align: center; 
 }
 
 h1 {
@@ -92,6 +94,7 @@ input {
 	border: 2px solid #c1deeb;
 	outline: none;
 	box-shadow: 0 2px 4px 0 grey;
+	border-radius: 10px;
 }
 
 input:focus {
@@ -160,15 +163,6 @@ select option:disabled {
    height: 29px;
    width: 240px;
 }
-
-/*.shirt {
-	background-color: lightgrey;
-}
-
-.legend {
-	padding-top: 25px;
-	padding-left: 10px;
-}*/
 
 .total-div {
 	font-style: italic;
